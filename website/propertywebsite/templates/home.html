@@ -36,7 +36,9 @@
                     <li class="nav-item"><a class="nav-link" href="#floorplans">FLOOR PLANS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#location">LOCATION</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">GALLERY</a></li> <!-- Added gallery link -->
                     <li class="nav-item"><a class="nav-link" href="https://www.lunaproperties.biz/rentalsSilverCreek.htm" target="_blank" style="font-weight: bold;">APPLY NOW</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -44,47 +46,84 @@
 </section>
 
 
-<header class="masthead">
-    <div class="boxed-container">
-        <div class="container">
-            <div class="masthead-heading">SILVER CREEK APARTMENTS</div>
-            <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/MG-4.jpg' %}" alt="Background Image" class="background-img" style="position: relative; z-index: 1; width: 100%; height: auto; object-fit: cover; padding: 100px 0; color: white; text-align: center;">
-            <div class="masthead-subheading text-uppercase">YOUR HOME IN THE HEART OF BOZEMAN</div>
-            <a class="btn btn-dark btn-xl text-uppercase" href="#floorplans">Select a floorplan to see more.</a>
+<header class="masthead" style="background-image: url('{% static 'startbootstrap-agency-gh-pages/assets/img/MG-4.jpg' %}');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Ensures the background image stays fixed while scrolling */
+        padding: 200px 0; /* Adjust padding as needed */
+        position: relative; /* Ensure positioning context for child elements */
+        z-index: 0; /* Ensure the background image is at the bottom */
+        text-align: center; /* Center align text */
+        ">
+    <div class="container px-4 px-lg-5 h-100" style="background-color: rgba(0, 0, 0, 0.23); /* Semi-transparent black background */
+        padding: 50px; /* Adjust padding inside the container */
+        ">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <div class="col-12 align-self-end">
+                <h1 class="text-white full-width-heading">SILVER CREEK APARTMENTS</h1>
+                <hr class="divider">
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white full-width-subheading">YOUR HOME IN THE HEART OF BOZEMAN</p>
+                <a class="btn btn-dark btn-xl" href="https://www.lunaproperties.biz/rentalsSilverCreek.htm">CURRENT LISTINGS</a>
+            </div>
         </div>
     </div>
 </header>
 
+
+
+
+
+
     
 
-<title>Amenities Section</title>
-<!-- AOS CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-<style>
-    .floating-list-item {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
+<section class="page-section bg-light" id="amenities">
+    <style>
+        #amenities {
+            background-image: url("{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (3) (2).jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Ensures the background image stays fixed while scrolling */
+            padding: 100px 0; /* Adjust padding as needed */
+            position: relative; /* Ensure positioning context for child elements */
+            z-index: 0; /* Ensure the background image is at the bottom */
+        }
 
-    .floating-list-item[data-aos="fade-up"].aos-animate {
-        opacity: 1;
-        transform: translateY(0);
-    }
+        .amenities-content {
+            position: relative;
+            z-index: 1;
+            color: white; /* Set text color to white */
+        }
 
-    ul {
-        list-style-type: disc; /* Ensure bullets are shown */
-        padding-left: 20px; /* Optional: Adjust padding for better alignment */
-    }
-</style>
-</head>
-<body>
-    <section class="page-section bg-light" id="amenities">
-        <div class="text-center">
+        .amenities-content .row {
+            padding-top: 50px; /* Adjust top padding for better alignment */
+        }
+
+        .amenities-content .col-md-4 {
+            margin-bottom: 30px; /* Optional: Adjust margin between columns */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px; /* Adjust padding inside the column */
+        }
+
+        .amenities-content h2,
+        .amenities-content h3,
+        .amenities-content .section-subheading,
+        .amenities-content .text-muted,
+        .amenities-content ul {
+            color: white; /* Set all text inside .amenities-content to white */
+        }
+
+        .amenities-content ul li {
+            color: white; /* Set list item text color to white */
+        }
+    </style>
+    <div class="container">
+        <div class="col-md-4 amenities-content">
             <h2 class="section-heading text-uppercase">AMENITIES</h2>
-            <h3 class="section-subheading text-muted">Welcome to Sliver Creek Apartments, where luxury meets convenience in the heart of Bozeman, Montana. Our modern apartments are just a short drive to the Gallatin River, Downtown Bozeman, and the Bridger Mountains. Whether you’re a young professional, a family, or a student, you’ll find our amenities and features perfectly tailored to meet your needs.</h3>
+            <h3 class="section-subheading">Welcome to Sliver Creek Apartments, where luxury meets convenience in the heart of Bozeman, Montana. Our modern apartments are just a short drive to the Gallatin River, Downtown Bozeman, and the Bridger Mountains. Whether you’re a young professional, a family, or a student, you’ll find our amenities and features perfectly tailored to meet your needs.</h3>
         </div>
-        <div class="row text-center">
+        <div class="row text-center amenities-content">
             <!-- Community Amenities -->
             <div class="col-md-4">
                 <img class="rounded-square img-fluid" src="{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (9).jpg' %}" alt="Community Amenities">
@@ -149,17 +188,11 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- AOS JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800, // Animation duration
-            easing: 'ease-in-out', // Animation easing
-            once: true, // Whether animation should happen only once - while scrolling down
-        });
-    </script>
+
+
 
 
   
@@ -211,8 +244,9 @@
     </style>
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">FLOOR PLANS</h2>
+            <h2 class="section-heading text-uppercase text-white">FLOOR PLANS</h2>
         </div>
+        <br></br>
         <br></br>
         <div class="row">
             <!-- Studio Section -->
@@ -232,7 +266,7 @@
                 <div class="floorplan-section">
                     <div class="gallery-item text-center">
                         <h3 class="section-subheading">1 Bedroom</h3>
-                        <a href="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit D.jpg' %}" data-lightbox="floorplans" data-title="1 Bedroom Floor Plan">
+                        <a href="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit D.png' %}" data-lightbox="floorplans" data-title="1 Bedroom Floor Plan">
                             <img class="img-fluid rounded" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit B_edited.jpg' %}" alt="1 Bedroom Floor Plan">
                         </a>
                     </div>
@@ -343,16 +377,20 @@
 <!-- Section with Links to External Resources and Additional Content -->
 <section class="page-section" id="location">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">LOCATION</h2>
-            <p>Welcome to the neighborhood! Silver Creek offers you the best of luxury living in a location we know you’ll love. Silver Creek is conveniently located off of Oak and 27th Streets.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-container" style="position: relative; z-index: 1; background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">
+                    <h2 class="section-heading text-uppercase">LOCATION</h2>
+                    <p>Welcome to the neighborhood! Silver Creek offers you the best of luxury living in a location we know you’ll love. Silver Creek is conveniently located off of Oak and 27th Streets.</p>
+                </div>
+            </div>
         </div>
         <br>
 
         <!-- Links to External Resources -->
         <div class="row">
             <div class="col-md-4">
-                <div class="info-container">
+                <div class="info-container" style="position: relative; z-index: 1; background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">
                     <h3>Best Places to Eat in Bozeman, MT</h3>
                     <ul class="text-muted text-start">
                         <li class="floating-list-item" data-aos="fade-up" data-aos-delay="100">
@@ -368,7 +406,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="info-container">
+                <div class="info-container" style="position: relative; z-index: 1; background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">
                     <h3>Best Hikes in Bozeman, MT</h3>
                     <ul class="text-muted text-start">
                         <li class="floating-list-item" data-aos="fade-up" data-aos-delay="100">
@@ -384,7 +422,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="info-container">
+                <div class="info-container" style="position: relative; z-index: 1; background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">
                     <h3>Best Places to Snowboard in Bozeman, MT</h3>
                     <ul class="text-muted text-start">
                         <li class="floating-list-item" data-aos="fade-up" data-aos-delay="100">
@@ -400,8 +438,54 @@
                 </div>
             </div>
         </div>
+
+        <!-- Video Container -->
+        <div class="video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0;">
+            <video class="bg-video" autoplay loop muted playsinline style="min-width: 100%; min-height: 100%; width: auto; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-size: cover; opacity: 0.7;">
+                <source src="{% static 'startbootstrap-agency-gh-pages/assets/img/ski.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 </section>
+
+<style>
+.page-section {
+    position: relative; /* Ensure relative positioning for absolute children */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity (0.3 is 30% opacity) */
+}
+</style>
+
+
 
 <!-- AOS JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -413,6 +497,60 @@
     });
 </script>
 
+<section class="page-section" id="gallery">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">GALLERY</h2>
+            <p class="section-subheading text-muted">Explore our photo gallery showcasing Silver Creek Apartments.</p>
+        </div>
+        <br></br>
+        <!-- Add Pinterest-like photo gallery HTML here -->
+        <div class="layout-container">
+            <ul class="photoGalleryThumbs">
+            <ul class="photoGalleryThumbs">
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/Aerial (1) (3).jpg' %}" alt="Gallery Image 1"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/MG-1 (1).jpg' %}" alt="Gallery Image 2"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/InteriorPhoto (1) (1).jpg' %}" alt="Gallery Image 3"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/MG-11 (1).jpg' %}" alt="Gallery Image 4"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/MG-12.jpg' %}" alt="Gallery Image 5"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (3) (2).jpg' %}" alt="Gallery Image 6"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (5) (1).jpg' %}" alt="Gallery Image 7"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (10) (1).jpg' %}" alt="Gallery Image 8"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (12) (1).jpg' %}" alt="Gallery Image 9"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (7) (2).jpg' %}" alt="Gallery Image 10"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/BuildingPhoto (14).jpg' %}" alt="Gallery Image 11"></li>
+                <li><img src="{% static 'startbootstrap-agency-gh-pages/assets/img/dining.jpg' %}" alt="Gallery Image 12"></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* CSS for multi-column grid gallery */
+    .layout-container {
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .photoGalleryThumbs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); /* Adjust column width as needed */
+        grid-gap: 50px; /* Adjust spacing between images */
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .photoGalleryThumbs li {
+        margin-bottom: 0; /* Remove default margin */
+        text-align: center;
+    }
+
+    .photoGalleryThumbs img {
+        max-width: 100%; /* Ensure images fill their container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove any default inline alignment */
+    }
+</style>
 
 
 
@@ -421,116 +559,55 @@
 
 
 
-<!-- Contact-->
+
+
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h2 class="section-heading text-muted">Contact Us</h2>
         </div>
-        <div class="row">
-            <!-- Apartment Inquiries -->
-            <div class="col-lg-4">
-                <div class="contact-info-box bg-white p-4 mb-4">
-                    <h3 class="section-subheading text-muted fw-bold">Apartment Inquiries</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="info-container" style="background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">
                     <p class="text-muted">Have a question, concern, or want to book a tour? Please reach out to us and someone from Slivercreek Apartments will get back to you soon.</p>
                     <p class="text-muted">For more information:</p>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-envelope me-2"></i><a href="mailto:info@example.com">allex@lunaproperties.biz</a></li>
+                        <br>
                         <li><i class="fas fa-clock me-2"></i>Office Hours: Monday - Thursday, 9:00 AM to 5:00 PM and Friday, 9:00 AM to 1:00 PM</li>
+                        <br>
                         <li><i class="fas fa-phone me-2"></i><a href="tel:+1234567890">+1 (406) 587-9783</a></li>
                     </ul>
                 </div>
-            </div>
-            <!-- Contact Form -->
-            <div class="col-lg-8">
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-dark btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
             </div>
         </div>
     </div>
 </section>
 
 
-        <!-- Footer-->
-        <footer class="footer py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Sliver Creek Apartments 2024</div>
-                    
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/silvercreekbozeman/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/silvercreekbozeman/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">1481 N 25th Ave, Bozeman, MT 59718, USA</a>
-                        <a class="link-dark text-decoration-none" href="#!">406.587.9783</a>
-                    </div>
-                </div>
+<!-- Footer-->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">Copyright &copy; Sliver Creek Apartments 2024</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/silvercreekbozeman/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/silvercreekbozeman/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-        </footer>
-        
-        
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{% static 'startbootstrap-agency-gh-pages/js/scripts.js' %}"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
-</html>
+            <div class="col-lg-4 text-lg-end">
+                <a class="link-dark text-decoration-none me-3" href="#!">1481 N 25th Ave, Bozeman, MT 59718, USA</a>
+                <a class="link-dark text-decoration-none" href="#!">406.587.9783</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="{% static 'startbootstrap-agency-gh-pages/js/scripts.js' %}"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
