@@ -211,110 +211,377 @@
 
 
   
-<!-- Floor Plans -->
+<!-- Floor Plans Section -->
 <section class="page-section bg-light" id="floorplans">
     <style>
         #floorplans {
             background-image: url("{% static 'startbootstrap-agency-gh-pages/assets/img/header-bg.jpg' %}");
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Ensures the background image stays fixed while scrolling */
-            padding: 100px 0; /* Adjust padding as needed */
-            position: relative; /* Ensure positioning context for child elements */
-            z-index: 0; /* Ensure the background image is at the bottom */
+            background-attachment: fixed;
+            padding: 100px 0;
+            position: relative;
+            z-index: 0;
         }
         .floorplan-section {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
-        height: 100%; /* Ensure all sections occupy equal height */
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .gallery-item .section-subheading {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .gallery-item a {
+            display: block;
+            height: 100%;
+        }
+        .gallery-item img {
+        width: 100%;
+        height: auto; /* Ensures aspect ratio is maintained */
+        margin: auto;
     }
 
-    .gallery-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%; /* Ensure each gallery item occupies full height of parent */
-    }
+    
 
-    .gallery-item .section-subheading {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .gallery-item a {
-        display: block;
-        height: 100%; /* Ensure anchor tags occupy full height */
-    }
-
-    .gallery-item img {
-        max-width: 100%;
-        max-height: 100%; /* Ensure images don't exceed the container */
-        width: auto;
-        height: auto;
-        margin: auto; /* Center the image within its container */
-    }
+        .dropdown-content {
+            display: none;
+            flex-direction: row;
+            margin-top: 2;
+        }
+        .toggle-button {
+            margin-top: 10px;
+        }
     </style>
+
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase text-white">FLOOR PLANS</h2>
         </div>
-        <br></br>
-        <br></br>
-        <div class="row">
-            <!-- Studio Section -->
-            <div class="col-md-3 mb-4">
-                <div class="floorplan-section">
-                    <div class="gallery-item text-center">
-                        <h3 class="section-subheading">Studio</h3>
-                        <a href="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit A (1).jpg' %}" data-lightbox="floorplans" data-title="Studio Floor Plan">
-                            <img class="img-fluid rounded" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit A (1).jpg' %}" alt="Studio Floor Plan">
-                        </a>
+        
+
+            <title>Carousel Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for black carousel control buttons */
+        .carousel-control-prev,
+        .carousel-control-next {
+            color: black;
+        }
+        /* Style for carousel thumbnails */
+        .carousel-thumbnails {
+            display: flex;
+            justify-content: center; /* Center align thumbnails horizontally */
+            margin-top: 10px; /* Adjust top margin as needed */
+        }
+        .carousel-thumbnails img {
+            max-width: 100px;
+            cursor: pointer;
+            margin: 0 5px; /* Adjust horizontal margin between thumbnails */
+        }
+        .carousel-thumbnails img.active {
+            border: 2px solid black; /* Highlight the active thumbnail */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Studio Section -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div id="carouselStudio" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Studio Floor Plans/Unit A (1).jpg' %}" alt="Studio Floor Plan">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Studio Floor Plans/Unit B.jpg' %}" alt="Studio Floor Plan 2">
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselStudio" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselStudio" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </div>
+    </div>
+    <!-- Carousel Thumbnails -->
+    <div class="row justify-content-left mt-3">
+        <div class="col-md-8">
+            <div class="carousel-thumbnails">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/Studio Floor Plans/Unit A (1).jpg' %}" class="img-fluid rounded" alt="Studio Floor Plan Thumbnail" data-bs-target="#carouselStudio" data-bs-slide-to="0">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/Studio Floor Plans/Unit B.jpg' %}" class="img-fluid rounded" alt="Studio Floor Plan 2 Thumbnail" data-bs-target="#carouselStudio" data-bs-slide-to="1">
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- 1 Bedroom Section -->
-            <div class="col-md-3 mb-4">
-                <div class="floorplan-section">
-                    <div class="gallery-item text-center">
-                        <h3 class="section-subheading">1 Bedroom</h3>
-
-                        <a href="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit D.png' %}" data-lightbox="floorplans" data-title="1 Bedroom Floor Plan">
-                            <img class="img-fluid rounded" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit D.png' %}" alt="1 Bedroom Floor Plan">
-                        </a>
+<!-- 1 Bedroom Section -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div id="carouselOneBedroom" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit C.jpg' %}" alt="1 Bedroom Floor Plan">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D.png' %}" alt="1 Bedroom Floor Plan 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D1.png' %}" alt="1 Bedroom Floor Plan 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D2.png' %}" alt="1 Bedroom Floor Plan 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D3.png' %}" alt="1 Bedroom Floor Plan 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit K2.png' %}" alt="1 Bedroom Floor Plan 6">
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselOneBedroom" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselOneBedroom" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </div>
+    </div>
 
-            <!-- 2 Bedroom Section -->
-            <div class="col-md-3 mb-4">
-                <div class="floorplan-section">
-                    <div class="gallery-item text-center">
-                        <h3 class="section-subheading">2 Bedroom</h3>
-                        <a href="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit E.png' %}" data-lightbox="floorplans" data-title="2 Bedroom Floor Plan">
-                            <img class="img-fluid rounded" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit E.png' %}" alt="2 Bedroom Floor Plan">
-                        </a>
+    
+    <!-- Carousel Thumbnails -->
+    <div class="row justify-content-left mt-3">
+        <div class="col-md-8">
+            <div class="carousel-thumbnails">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit C.jpg' %}" class="img-fluid rounded" alt="1 Bedroom Floor Plan Thumbnail" data-bs-target="#carouselOneBedroom" data-bs-slide-to="0">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D.png' %}" class="img-fluid rounded" alt="1 Bedroom Floor Plan 2 Thumbnail" data-bs-target="#carouselOneBedroom" data-bs-slide-to="1">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D1.png' %}" class="img-fluid rounded" alt="1 Bedroom Floor Plan 3 Thumbnail" data-bs-target="#carouselOneBedroom" data-bs-slide-to="2">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D2.png' %}" class="img-fluid rounded" alt="1 Bedroom Floor Plan 4 Thumbnail" data-bs-target="#carouselOneBedroom" data-bs-slide-to="3">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit D3.png' %}" class="img-fluid rounded" alt="1 Bedroom Floor Plan 5 Thumbnail" data-bs-target="#carouselOneBedroom" data-bs-slide-to="4">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/1 Bed/Unit K2.png' %}" class="img-fluid rounded" alt="1 Bedroom Floor Plan 6 Thumbnail" data-bs-target="#carouselOneBedroom" data-bs-slide-to="5">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 2 Bedroom Section -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div id="carouselTwoBedroom" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit E.png' %}" alt="2 Bedroom Floor Plan">
                     </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit E1.png' %}" alt="2 Bedroom Floor Plan 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit E2.png' %}" alt="2 Bedroom Floor Plan 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit F.png' %}" alt="2 Bedroom Floor Plan 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit F1.png' %}" alt="2 Bedroom Floor Plan 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit G.png' %}" alt="2 Bedroom Floor Plan 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit G1.png' %}" alt="2 Bedroom Floor Plan 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit H.png' %}" alt="2 Bedroom Floor Plan 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit H1.png' %}" alt="2 Bedroom Floor Plan 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit J (1).png' %}" alt="2 Bedroom Floor Plan 10">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit K.png' %}" alt="2 Bedroom Floor Plan 11">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit K1.png' %}" alt="2 Bedroom Floor Plan 12">
+                    </div>
+                    <!-- Add more carousel items as needed -->
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTwoBedroom" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTwoBedroom" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </div>
+    </div>
+    <!-- Carousel Thumbnails -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+            <div class="carousel-thumbnails">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit E.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="0">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit E1.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 2 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="1">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit E2.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 3 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="2">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit F.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 4 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="3">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit F1.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 5 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="4">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit G.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 6 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="5">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit G1.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 7 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="6">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit H.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 8 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="7">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit H1.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 9 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="8">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit J (1).png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 10 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="9">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit K.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 11 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="10">
+                <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/2 Bed/Unit K1.png' %}" class="img-fluid rounded" alt="2 Bedroom Floor Plan 12 Thumbnail" data-bs-target="#carouselTwoBedroom" data-bs-slide-to="11">
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- 3 Bedroom Section -->
-            <div class="col-md-3 mb-4">
-                <div class="floorplan-section">
-                    <div class="gallery-item text-center">
-                        <h3 class="section-subheading">3 Bedroom</h3>
-                        <a href="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit L.png' %}" data-lightbox="floorplans" data-title="3 Bedroom Floor Plan">
-                            <img class="img-fluid rounded" src="{% static 'startbootstrap-agency-gh-pages/assets/img/Unit E.png' %}" alt="3 Bedroom Floor Plan">
-                        </a>
-                    </div>
+
+
+<!-- 3-Bedroom Section -->
+<div class="col-md-8">
+    <div id="carouselThreeBedroom" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/3 Bed/Unit L.png' %}" alt="3 Bedroom Floor Plan 1">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/3 Bed/Unit L1.png' %}" alt="3 Bedroom Floor Plan 2">
+            </div>
+            <!-- Add more carousel items as needed -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselThreeBedroom" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselThreeBedroom" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Carousel Thumbnails for 3-Bedroom -->
+<div class="row justify-content-center mt-3">
+    <div class="col-md-8">
+        <div class="carousel-thumbnails">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/3 Bed/Unit L.png' %}" class="img-fluid rounded" alt="3 Bedroom Floor Plan Thumbnail 1" data-bs-target="#carouselThreeBedroom" data-bs-slide-to="0">
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/3 Bed/Unit L1.png' %}" class="img-fluid rounded" alt="3 Bedroom Floor Plan Thumbnail 2" data-bs-target="#carouselThreeBedroom" data-bs-slide-to="1">
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
+
+
+
+<div class="col-md-8">
+    <div id="carouselFullFloorPlans" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-04.jpg' %}" alt="Full Floor Plan 1">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-01.jpg' %}" alt="Full Floor Plan 2">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-02.jpg' %}" alt="Full Floor Plan 3">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-03.jpg' %}" alt="Full Floor Plan 4">
+            </div>
+            <!-- Add more carousel items as needed -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFullFloorPlans" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselFullFloorPlans" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Carousel Thumbnails -->
+<div class="row justify-content-center mt-3">
+    <div class="col-md-8">
+        <div class="carousel-thumbnails">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-04.jpg' %}" class="img-fluid rounded" alt="Full Floor Plan Thumbnail 1" data-bs-target="#carouselFullFloorPlans" data-bs-slide-to="0">
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-01.jpg' %}" class="img-fluid rounded" alt="Full Floor Plan Thumbnail 2" data-bs-target="#carouselFullFloorPlans" data-bs-slide-to="1">
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-02.jpg' %}" class="img-fluid rounded" alt="Full Floor Plan Thumbnail 3" data-bs-target="#carouselFullFloorPlans" data-bs-slide-to="2">
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'startbootstrap-agency-gh-pages/assets/img/full floor plans/floor plan-03.jpg' %}" class="img-fluid rounded" alt="Full Floor Plan Thumbnail 4" data-bs-target="#carouselFullFloorPlans" data-bs-slide-to="3">
+                </div>
+                <!-- Add more thumbnails as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Bootstrap JavaScript (Bundle for popper.js and Bootstrap JS) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript for carousel thumbnails -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var carouselItems = document.querySelectorAll('.carousel-thumbnails img');
+        carouselItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var slideIndex = parseInt(this.getAttribute('data-bs-slide-to'));
+                var carousel = bootstrap.Carousel.getInstance(document.querySelector('#carouselOneBedroom'));
+                carousel.to(slideIndex); // Activate the corresponding slide in the main carousel
+            });
+        });
+    });
+</script>
 </section>
+
+
+
+
+
 
 
 
@@ -636,3 +903,4 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
